@@ -8,7 +8,16 @@ class DisplayManager
   end
 
   def format_product_list(products)
-    "Available Products:\n B2 - Soda Pop - 2.20"
+    #"Available Products:\n B2 - Soda Pop - 2.20"
+    output = []
+    output << "Available Products:"
+
+    products.each do |code, product|
+      output_line = " #{code} - #{product[:name]} - #{product[:price]}"
+      output << output_line
+    end
+
+    output.join("\n")
   end
 
   def format_transaction_result(product_name, change)
