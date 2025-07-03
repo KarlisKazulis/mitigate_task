@@ -5,6 +5,7 @@ class CoinManager
   end
 
   def add_coins(amount)
+    @balance += amount
     @balance
   end
 
