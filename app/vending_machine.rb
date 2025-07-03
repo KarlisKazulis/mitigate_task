@@ -21,7 +21,7 @@ class VendingMachine
   def select_product(code)
     product = @product_catalog.find_product(code)
 
-    raise 'No product' if product.nil?
+    return 'Invalid product' if product.nil?
     return 'Insufficient funds' if balance < product[:price]
 
     @product_catalog.update_stock(code)
