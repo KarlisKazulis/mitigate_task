@@ -22,7 +22,7 @@ class VendingMachine
     product = @product_catalog.find_product(code)
 
     raise 'No product' if product.nil?
-    raise 'Insufficient funds' if balance < product[:price]
+    return 'Insufficient funds' if balance < product[:price]
 
     @product_catalog.update_stock(code)
     change = @transaction_processor.process_transaction(product, balance)
