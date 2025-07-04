@@ -24,6 +24,6 @@ class DisplayManager
     basic_result = "Dispensed #{product_name}"
     last_transaction = @transaction_processor.last_transaction_details
 
-    basic_result + " with change #{change}"
+    basic_result + " with change #{change}\n" + last_transaction
   end
 end
